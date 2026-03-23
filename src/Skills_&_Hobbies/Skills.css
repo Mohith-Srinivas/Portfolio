@@ -1,0 +1,233 @@
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* ============================= */
+/* SKILLS SECTION */
+/* ============================= */
+
+.skills-section {
+  background: linear-gradient(145deg, #111c28, #195078, #00c8ff);
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Section Fade Animation */
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+.section-title {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #00ffdd;
+  letter-spacing: 2px;
+}
+
+.section-subtitle {
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ============================= */
+/* CARD DESIGN */
+/* ============================= */
+
+.skill-card {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 35px 20px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0, 255, 221, 0.15);
+  font-family: 'Vend Sans', sans-serif;
+
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Stagger Effect */
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
+.skill-card:nth-child(6) { animation-delay: 0.6s; }
+.skill-card:nth-child(7) { animation-delay: 0.7s; }
+
+
+.skill-card img {
+  width: 70px;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease;
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+/* ============================= */
+/* HOVER EFFECT */
+/* ============================= */
+
+.skill-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 255, 221, 0.4);
+}
+
+.skill-card:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.skill-card:hover h3 {
+  color: #00ffdd;
+}
+/* ============================= */
+/* ADDITIONAL SKILLS - CONNECTED FLOW */
+/* ============================= */
+
+.additional-section {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.additional-title {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 2.5rem;
+  color: #00ffdd;
+  margin-bottom: 8px;
+}
+
+.title-connector {
+  width: 4px;
+  height: 70px;
+  background: #00c8ff;
+  margin: 0 auto;
+}
+
+/* Wrapper */
+.flow-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Horizontal main line */
+.main-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #00ffdd, #00c8ff);
+}
+
+/* Items container */
+.flow-items {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  position: relative;
+  font-family: 'Vend Sans', sans-serif;
+}
+
+/* Each node */
+.flow-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Connector line (perfectly attached) */
+.connector {
+  width: 3px;
+  height: 50px;
+  background:  #00c8ff;
+}
+
+/* Bubble */
+.bubble {
+  margin-top: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 14px 24px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  transition: 0.4s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 5px 20px rgba(0, 255, 221, 0.2);
+}
+
+/* Hover effect */
+.bubble:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 255, 221, 0.5);
+  background: rgba(0, 255, 221, 0.1);
+}
+
+.flow-items::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 919px;   /* change this value */
+  height: 3px;
+  background: #00c8ff;
+}

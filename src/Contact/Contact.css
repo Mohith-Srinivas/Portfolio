@@ -1,0 +1,109 @@
+/* ============================= */
+/* CONTACT SECTION */
+/* ============================= */
+
+.contact-section {
+  background: linear-gradient(145deg, #172739, #114c76, #00c8ff);
+  padding: 100px 0;
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #00ffd9;
+}
+
+.contact-description {
+  font-family: 'Vend Sans', sans-serif;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 60px;
+  color: #d6f7ff;
+}
+
+/* ============================= */
+/* CONTACT CARDS */
+/* ============================= */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.contact-card {
+  background: #123c5a;
+  padding: 20px 35px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Vend Sans', sans-serif;
+  box-shadow: 0 0 15px rgba(0,212,255,0.3);
+  transition: 0.4s;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.contact-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px #00d4ff;
+}
+
+.contact-icon {
+  color: #00ffd9;
+  font-size: 30px !important;
+}
+/* ============================= */
+/* SOCIAL MEDIA */
+/* ============================= */
+
+.social-section {
+  margin-top: 70px;
+}
+
+.social-section h3 {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  margin-bottom: 25px;
+  color: #00ffd9;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.social-icons-contact {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* anchor becomes the box */
+.social-icons-contact a {
+  background: #123c5a;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(0,212,255,0.3);
+  transition: 0.3s;
+}
+
+/* icon itself */
+.social-icon {
+  color: #00ffd9;
+  font-size: 25px !important;
+}
+
+/* hover */
+.social-icons-contact a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #00d4ff;
+}
+

@@ -1,0 +1,307 @@
+/* ============================= */
+/* PROJECT SECTION */
+/* ============================= */
+
+.projects {
+  min-height: 100vh;
+  padding: 120px 12%;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    120deg,
+    #081c2c 0%,
+    #0d2d44 40%,
+    #1c476b 70%,
+    #1276a4 100%
+  );
+
+  color: white;
+}
+
+/* ============================= */
+/* BACKGROUND GLOW EFFECT */
+/* ============================= */
+
+.projects::before {
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 550px;
+
+  background: radial-gradient(circle, rgba(0,255,217,0.4), transparent 70%);
+
+  top: 10%;
+  right: -120px;
+
+  filter: blur(120px);
+
+  animation: floatGlow1 12s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+.projects::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+
+  background: radial-gradient(circle, rgba(0,191,255,0.5), transparent 70%);
+
+  bottom: -80px;
+  left: -120px;
+
+  filter: blur(110px);
+
+  animation: floatGlow2 14s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
+.projects-title {
+  text-align: center;
+  font-size: 58px;
+  margin-bottom: 80px;
+  color: #00ffd9;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+/* ============================= */
+/* CONTAINER */
+/* ============================= */
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
+}
+ 
+
+
+/* ============================= */
+/* PROJECT CARD */
+/* ============================= */
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: auto;
+
+  transition: transform 0.4s ease;
+
+  animation: floatWave 6s ease-in-out infinite;
+}
+
+/* Card Hover Lift */
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+
+.project-image img {
+  width: 400px;   /* was 420px */
+  height: 420px;  /* was 440px */
+
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #081c2c;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Image Hover Zoom */
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+}
+
+/* ============================= */
+/* CONTENT CARD */
+/* ============================= */
+
+
+
+
+.project-content {
+  width: 1100px;   /* was 1120px */
+  padding: 20px;   /* was 25px */
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+
+  border: 1px solid rgba(255,255,255,0.1);
+  font-family: 'Vend Sans', sans-serif;
+  transition: all 0.4s ease;
+}
+
+
+  
+
+/* Glow effect */
+
+.project-card:hover .project-content {
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.6),
+    0 0 25px rgba(0,224,255,0.35);
+}
+
+/* ============================= */
+/* TEXT */
+/* ============================= */
+
+.project-content h2 {
+  
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.project-content h4 {
+  font-size: 18px;
+  color: #00e0ff;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.project-content p {
+  text-align: justify;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #d7f4ff;
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+.project-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.project-btn svg{
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.project-btn{
+  padding: 14px 30px;
+  border-radius: 40px;
+  border: 2px solid #00e0ff;
+  background: transparent;
+  color: #00e0ff;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: all 0.35s ease;
+}
+
+.project-btn:hover {
+  background: #00e0ff;
+  color: #081c2c;
+
+  box-shadow: 0 0 25px rgba(0,224,255,0.7);
+
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ============================= */
+/* FLOATING ANIMATIONS */
+/* ============================= */
+
+@keyframes floatWave {
+
+  0%{
+    transform: translateY(0px);
+  }
+
+  50%{
+    transform: translateY(-18px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+
+}
+
+@keyframes floatGlow1 {
+
+  0%{
+    transform: translateY(0px) translateX(0px);
+  }
+
+  50%{
+    transform: translateY(40px) translateX(-30px);
+  }
+
+  100%{
+    transform: translateY(0px) translateX(0px);
+  }
+
+}
+
+@keyframes floatGlow2 {
+
+  0%{
+    transform: translateY(0px) translateX(0px);
+  }
+
+  50%{
+    transform: translateY(-35px) translateX(40px);
+  }
+
+  100%{
+    transform: translateY(0px) translateX(0px);
+  }
+
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width:900px){
+
+  .project-card{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-content{
+    position: relative;
+    width: 100%;
+    margin-top: -30px;
+  }
+
+  .project-image img{
+    width: 100%;
+    height: auto;
+  }
+
+}

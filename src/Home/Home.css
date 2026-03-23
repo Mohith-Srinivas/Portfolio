@@ -1,0 +1,184 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/* HOME SECTION */
+/* ============================= */
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12%;
+  overflow: hidden;
+  color: #ffffff;
+
+  background: linear-gradient(
+    120deg,
+    #081c2c 0%,
+    #0d2d44 40%,
+    #123b5c 70%,
+    #0ea5e9 100%
+  );
+}
+
+/* ============================= */
+/* BACKGROUND GLOW EFFECTS */
+/* ============================= */
+
+/* Right Glow */
+.home::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgb(14, 247, 150), transparent 70%);
+  top: 10%;
+  right: 1px;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* Left Glow */
+.home::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.704), transparent 70%);
+  bottom: -60px;
+  left: -80px;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+/* ============================= */
+/* CONTENT SECTION */
+/* ============================= */
+.home-content {
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  transform: translateX(-60px);
+}
+
+/* Small Heading */
+.home-content h4 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+/* Name Styling */
+.home-content h1 {
+  font-size: 59px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #ffffff, #00e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.home-content h2 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.home-content h2 span {
+  color: #00e0ff;
+  font-weight: 600;
+}
+
+/* Paragraph */
+.home-content p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: #cfefff;
+}
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+.btn {
+  text-decoration: none;   
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 40px;
+  border: 2px solid #00e0ff;
+  background: transparent;
+  color: #00e0ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.btn:hover {
+  background: #00e0ff;
+  color: #081c2c;
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.6);
+  transform: translateY(-4px);
+}
+
+.social-icons-home a {
+  margin-right: 15px;
+  transition: 0.3s ease;
+}
+
+.social-icons-home a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons-home{
+  margin-bottom: 20px;
+}
+
+/* ============================= */
+/* PROFILE IMAGE SECTION */
+/* ============================= */
+
+.profile-container {
+  position: relative;
+  width: 400px;   /* Increased from 400px */
+  height: 440px;
+  z-index: 1;
+  animation: floatWave 5.5s ease-in-out infinite;
+}
+
+/* Circular Image */
+.profile-img {
+  width: 450px;
+  height: 470px;
+  object-fit:cover;
+  border-radius: 14%;   /* Keep circular */
+  position: relative;
+  z-index: 1;
+  border: 8px solid #081c2c;   /* Slightly thicker border */
+}
+
+
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
+@keyframes floatWave {
+  10% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+

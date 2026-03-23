@@ -1,0 +1,195 @@
+/* ============================= */
+/* EDUCATION SECTION */
+/* ============================= */
+
+.education-section {
+  background: linear-gradient(145deg, #172939, #114a76, #00c8ff);
+  padding: 100px 0;
+  color: white;
+  min-height: 100vh;
+}
+
+.edu-title {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 80px;
+  color: #00ffd9;
+}
+
+p {
+ font-family: 'Vend Sans', sans-serif;
+}
+
+/* ============================= */
+/* TIMELINE STRUCTURE */
+/* ============================= */
+
+.timeline {
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+/* Vertical Center Line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #00d4ff;
+}
+
+/* Timeline Items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 40px 50px;
+}
+
+/* Left Side */
+.left {
+  left: 0;
+  text-align: right;
+}
+
+/* Right Side */
+.right {
+  left: 50%;
+}
+
+/* ============================= */
+/* NODE CIRCLE (Perfectly Centered) */
+/* ============================= */
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  width: 22px;
+  height: 22px;
+  background: #0f2d44;
+  border: 4px solid #00d4ff;
+  border-radius: 30%;
+  z-index: 4;
+}
+
+/* Position node exactly on center line */
+.left::before {
+  left: 100%;
+  transform: translateX(-50%);
+}
+
+.right::before {
+  left: 0%;
+  transform: translateX(-50%);
+}
+
+/* ============================= */
+/* HORIZONTAL CONNECTOR LINES */
+/* ============================= */
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 70px;
+  width: 50px;
+  height: 3.5px;
+  background: #00d4ff;
+  transition: transform 1s ease, box-shadow 0.4s ease;
+}
+
+/* Connectors align to center node */
+.left::after {
+  right: 0;
+  transform-origin: right;
+}
+
+.right::after {
+  left: 0;
+  transform-origin: left;
+}
+
+/* On Hover → Shrink Slightly */
+.timeline-item:hover::after {
+  transform: scaleX(0.77);
+  box-shadow: 0 0 10px #00d4ff;
+}
+
+/* ============================= */
+/* CONTENT BOX */
+/* ============================= */
+
+.content {
+  text-align: left;
+  background: #123c5a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease, box-shadow 0.5s ease;
+}
+
+.content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00d4ff;
+}
+
+/* ============================= */
+/* IMAGE STYLING */
+/* ============================= */
+
+.image-box img {
+  width: 470px;
+  height: 280px;
+  object-fit: cover;   /* prevents stretching */
+  border-radius: 12px;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 20px;
+    margin-bottom: 50px;
+  }
+
+  .left,
+  .right {
+    left: 0;
+    text-align: left;
+  }
+
+  .timeline-item::before {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+
+.image-box img {
+  width: 265px;
+  height: 160px;
+  object-fit: cover;   /* prevents stretching */
+  border-radius: 12px;
+}
+
+  .timeline-item::after {
+    left: 20px;
+  }
+}
