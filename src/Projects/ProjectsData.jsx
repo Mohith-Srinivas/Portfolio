@@ -1,5 +1,6 @@
 import Portfolio from "./Portfolio.jpeg";
 import CDD from "./CropDiseaseDetection&Diagnosis.jpg";
+import cura from "./CuraPredict.jpeg"
 
 const projectData = [
     {
@@ -18,6 +19,13 @@ const projectData = [
         "A smart system that detects crop diseases using deep learning models and provides diagnosis with recommendations for farmers.",
       image: CDD,
       preview: "https://agri-care-frontend-nine.vercel.app/"
+    },
+    {
+      title: "CuraPredict - Intelligent Health Prediction System",
+      subtitle: "React JS + Django + Machine Learning",
+      description:"A smart healthcare web application that predicts possible diseases based on user symptoms using machine learning models. It provides early diagnosis, recommendations, and maintains user history for better health tracking.",
+      image: cura,
+      preview: ""
     }
   ];
 

@@ -1,93 +1,143 @@
-/* ===== NAVBAR PREMIUM DESIGN ===== */
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
 
 .navbar {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 18px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  height: 64px;
+  padding: 0 50px;
   background: rgba(13, 44, 79, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  box-shadow: 0 4px 20px rgba(0, 224, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
   z-index: 1000;
 }
 
+/* LEFT */
 
-/* LEFT SECTION */
-
-.left-section{
-  display:flex;
-  align-items:center;
-  gap:15px;
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
+.menu-icon {
+  font-size: 30px !important;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-icon:hover {
+  color: #00e0ff;
+}
 
 /* LOGO */
 
 .logo {
+  font-family: 'Vend Sans', sans-serif;
   text-decoration: none;
-  font-size: 24px;
-  font-weight: 700;
   color: white;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .logo:hover {
   color: #00e0ff;
-  text-shadow: 0 0 12px rgba(0, 224, 255, 0.8);
 }
 
+/* RIGHT */
 
-/* NAV LINKS */
-
-.nav-links {
-  font-family: 'Arvo', serif;
-  list-style: none;
-  display: flex;
-  gap: 38px;
-}
-
-.nav-links li a {
+.nav-link {
   text-decoration: none;
-  font-size: 17px;
-  font-weight: 500;
   color: white;
-  position: relative;
-  transition: 0.3s ease;
+  font-weight: 500;
+  border: 2px solid #00e0ff;
+  border-radius: 20px;
+  padding: 6px 14px;
+  transition: 0.3s;
 }
 
-.nav-links li a:hover {
-  color: #00e0ff;
-}
-
-
-/* UNDERLINE */
-
-.nav-links li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
+.nav-link:hover {
   background: #00e0ff;
-  transition: 0.3s ease;
+  color: #081c2c;
 }
 
-.nav-links li a:hover::after {
+/* ============================= */
+/* OVERLAY */
+/* ============================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5;
 }
 
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100vh;
+  background: rgba(13, 44, 79, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+/* HEADER */
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'Vend Sans', sans-serif;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+/* MENU */
+
+.menu {
+  list-style: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.menu li {
+  padding: 14px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #00e0ff;
+  padding-left: 6px;
+}
 
 /* ACTIVE LINK */
 
@@ -96,35 +146,53 @@
   font-weight: 600;
 }
 
-.active-link::after {
-  width: 100%;
-}
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
-
-/* HAMBURGER BUTTON */
-
-.menu-btn{
-  display:none !important;
-}
-
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 900px){
-
-  .nav-links{
-    display:none;
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 5%;
   }
 
-  .menu-btn{
-    display:block !important;
+  .logo {
+    font-size: 20px;
   }
 
+  .menu-icon {
+    font-size: 26px !important;
+  }
 }
 
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 4%;
+  }
 
-/* Drawer Hover Effect */
+  .logo {
+    font-size: 18px;
+  }
 
-.MuiListItemButton-root:hover{
-  background: rgba(0,224,255,0.1);
+  .nav-link {
+    padding: 4px 10px;
+    font-size: 14px;
+  }
+
+  .sidebar {
+    width: 210px;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  .menu-icon {
+    font-size: 24px !important;
+  }
+
+  .sidebar {
+    width: 190px;
+  }
 }

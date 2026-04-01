@@ -25,7 +25,7 @@
     #081c2c 0%,
     #0d2d44 40%,
     #123b5c 70%,
-    #0ea5e9 100%
+    #00aeff 100%
   );
 }
 
@@ -180,5 +180,3 @@
   50% { transform: translateY(-25px); }
   100% { transform: translateY(0px); }
 }
-
-

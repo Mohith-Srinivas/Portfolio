@@ -50,6 +50,11 @@
   max-width: 400px;
 }
 
+.contact-link {
+  color: white;
+  text-decoration: none;
+}
+
 
 .contact-card:hover {
   transform: scale(1.07);

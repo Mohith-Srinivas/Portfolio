@@ -25,13 +25,15 @@ function Contact() {
         </div>
 
       <div className="contact-card">
-        <EmailIcon className="contact-icon" />
-        <a 
-          href="mailto:mohithsrinivasjujjuru.2006@gmail.com"
+          <EmailIcon className="contact-icon" />
+          <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=mohithsrinivasjujjuru.2006@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="contact-link"
-        >
+          >
           mohithsrinivasjujjuru.2006@gmail.com
-        </a>
+          </a>
       </div>
 
         <div className="contact-card">

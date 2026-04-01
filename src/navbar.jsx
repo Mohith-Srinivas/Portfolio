@@ -1,139 +1,80 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./navbar.css";
-
-/* Material UI */
-
-import {
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  ListItemIcon,
-  IconButton
-} from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
-import SchoolIcon from "@mui/icons-material/School";
-import PsychologyIcon from "@mui/icons-material/Psychology";
-import WorkIcon from "@mui/icons-material/Work";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
+import CloseIcon from "@mui/icons-material/Close";
 
 function Navbar() {
 
   const [open, setOpen] = useState(false);
 
   const menuItems = [
-    { text: "Home", path: "/", icon: <HomeIcon sx={{color:"white"}}/> },
-    { text: "Education", path: "/education", icon: <SchoolIcon sx={{color:"white"}}/> },
-    { text: "Skills", path: "/skills", icon: <PsychologyIcon sx={{color:"white"}}/> },
-    { text: "Projects", path: "/projects", icon: <WorkIcon sx={{color:"white"}}/> },
-    { text: "Contact", path: "/contact", icon: <ContactMailIcon sx={{color:"white"}}/> }
+    { name: "Home", path: "/" },
+    { name: "Education", path: "/education" },
+    { name: "Skills", path: "/skills" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav className="navbar">
+    <>
+      {/* NAVBAR */}
+      <nav className="navbar">
 
-      {/* LEFT SECTION */}
-      <div className="left-section">
+        <div className="nav-left">
+          <MenuIcon
+            className="menu-icon"
+            onClick={() => setOpen(true)}
+          />
 
-        <IconButton
-          className="menu-btn"
-          onClick={() => setOpen(true)}
-        >
-          <MenuIcon sx={{ color: "white", fontSize: 30 }} />
-        </IconButton>
-
-        <NavLink to="/" className="logo">
-          Portfolio
-        </NavLink>
-
-      </div>
-
-
-      {/* DESKTOP NAVIGATION */}
-
-      <ul className="nav-links">
-
-        <li>
-          <NavLink to="/" end className={({isActive}) => isActive ? "active-link" : ""}>
-            Home
+          <NavLink to="/" className="logo">
+            Portfolio
           </NavLink>
-        </li>
+        </div>
 
-        <li>
-          <NavLink to="/education" className={({isActive}) => isActive ? "active-link" : ""}>
-            Education
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/skills" className={({isActive}) => isActive ? "active-link" : ""}>
-            Skills
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/projects" className={({isActive}) => isActive ? "active-link" : ""}>
-            Projects
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/contact" className={({isActive}) => isActive ? "active-link" : ""}>
-            Contact
-          </NavLink>
-        </li>
-
-      </ul>
+      </nav>
 
 
-      {/* MOBILE SIDEBAR */}
+      {/* OVERLAY */}
+      {open && (
+        <div
+          className="overlay"
+          onClick={() => setOpen(false)}
+        ></div>
+      )}
 
-      <Drawer
-        anchor="left"
-        open={open}
-        onClose={() => setOpen(false)}
-        PaperProps={{
-          sx:{
-            background:"rgba(13,44,79,0.95)",
-            color:"white",
-            backdropFilter:"blur(12px)"
-          }
-        }}
-      >
 
-        <List sx={{ width: 260 }}>
+      {/* SIDEBAR */}
+      <div className={`sidebar ${open ? "active" : ""}`}>
 
-          {menuItems.map((item) => (
+        <div className="sidebar-header">
+          <h2>Portfolio</h2>
 
-            <ListItem key={item.text} disablePadding>
+          <CloseIcon
+            className="close-icon"
+            onClick={() => setOpen(false)}
+          />
+        </div>
 
-              <ListItemButton
-                component={NavLink}
+        <ul className="menu">
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <NavLink
                 to={item.path}
                 onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : ""
+                }
               >
-
-                <ListItemIcon>
-                  {item.icon}
-                </ListItemIcon>
-
-                <ListItemText primary={item.text} />
-
-              </ListItemButton>
-
-            </ListItem>
-
+                {item.name}
+              </NavLink>
+            </li>
           ))}
+        </ul>
 
-        </List>
-
-      </Drawer>
-
-    </nav>
+      </div>
+    </>
   );
 }
 
