@@ -8,53 +8,32 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
-
 /* ============================= */
-/* SKILLS SECTION */
+/* SKILLS SECTION (MOBILE FIRST) */
 /* ============================= */
 
 .skills-section {
   background: linear-gradient(145deg, #111c28, #195078, #00c8ff);
-  padding: 100px 20px;
+  padding: 60px 15px;
   text-align: center;
   color: white;
-
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Section Fade Animation */
-/* @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
+/* ============================= */
+/* TITLE */
+/* ============================= */
 
 .section-title {
   font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 1.6rem;
   margin-bottom: 10px;
   color: #00ffdd;
-  letter-spacing: 2px;
 }
 
 .section-subtitle {
-  max-width: 600px;
-  margin: 0 auto 60px auto;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  margin-bottom: 40px;
   opacity: 0.85;
 }
 
@@ -64,42 +43,227 @@ body {
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 /* ============================= */
-/* CARD DESIGN */
+/* CARD */
 /* ============================= */
 
 .skill-card {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
-  padding: 35px 20px;
-  border-radius: 20px;
-  transition: all 0.4s ease;
-  box-shadow: 0 10px 25px rgba(0, 255, 221, 0.15);
-  font-family: 'Vend Sans', sans-serif;
-
-  animation: slideUp 0.8s ease forwards;
-  opacity: 0;
+  padding: 15px 8px;
+  border-radius: 15px;
+  transition: 0.3s ease;
 }
 
-/* Slide Up Animation */
-@keyframes slideUp {
+.skill-card img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.skill-card h3 {
+  font-family: 'Vend Sans', sans-serif;
+  font-size: 0.8rem;
+}
+
+/* ============================= */
+/* ADDITIONAL SKILLS (UPDATED DESIGN) */
+/* ============================= */
+
+.additional-section {
+  margin-top: 100px;
+}
+
+.additional-title {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 2.5rem;
+  color: #00ffdd;
+  margin-bottom: 25px;
+}
+
+/* REMOVE OLD LINE + CONNECTORS */
+.title-connector,
+.connector,
+.flow-items::before {
+  display: none;
+}
+
+/* FLOW WRAPPER */
+.flow-wrapper {
+  max-width: 100%;
+  margin: auto;
+}
+
+/* FLEX TAG LAYOUT */
+.flow-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ITEM */
+.flow-item {
+  font-family: 'Vend Sans', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* NEW BUBBLE DESIGN */
+.bubble {
+  padding: 10px 16px;
+  font-size: 0.8rem;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+
+  border: 1px solid rgba(0, 255, 221, 0.3);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.bubble:hover {
+  transform: translateY(-5px) scale(1.05);
+  color: #00ffdd;
+  background: rgba(0, 255, 221, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 255, 221, 0.3);
+}
+
+/* ============================= */
+/* ≥480px */
+/* ============================= */
+
+@media (min-width: 480px) {
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .skill-card img {
+    width: 50px;
+  }
+
+  .skill-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .bubble {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+}
+
+/* ============================= */
+/* ≥768px (TABLET) */
+/* ============================= */
+
+@media (min-width: 768px) {
+
+  .skills-section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .flow-items {
+    gap: 18px;
+  }
+}
+
+/* ============================= */
+/* ≥1024px (LAPTOP) */
+/* ============================= */
+
+@media (min-width: 1024px) {
+
+  .section-title {
+    font-size: 2.8rem;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .skill-card img {
+    width: 60px;
+  }
+
+  .flow-items {
+    gap: 22px;
+  }
+
+  .bubble {
+    font-size: 0.95rem;
+    padding: 12px 20px;
+  }
+}
+
+/* ============================= */
+/* ≥1280px (DESKTOP) */
+/* ============================= */
+
+@media (min-width: 1280px) {
+
+  .skills-container {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .skill-card img {
+    width: 70px;
+  }
+
+  .flow-items {
+    gap: 25px;
+  }
+}
+
+/* ===================================================== */
+/* ANIMATIONS SECTION */
+/* ===================================================== */
+
+
+/* ============================= */
+/* 1. SKILL CARDS ENTRY ANIMATION */
+/* ============================= */
+
+/* Keyframe: Fade + Slide Up */
+@keyframes fadeSlideUp {
   from {
-    transform: translateY(40px);
     opacity: 0;
+    transform: translateY(25px); /* start slightly down */
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0); /* normal position */
   }
 }
 
-/* Stagger Effect */
+/* Apply animation to skill cards */
+.skill-card {
+  animation: fadeSlideUp 0.6s ease forwards;
+  opacity: 0; /* hidden before animation */
+}
+
+/* Stagger effect (cards appear one by one) */
 .skill-card:nth-child(1) { animation-delay: 0.1s; }
 .skill-card:nth-child(2) { animation-delay: 0.2s; }
 .skill-card:nth-child(3) { animation-delay: 0.3s; }
@@ -109,125 +273,72 @@ body {
 .skill-card:nth-child(7) { animation-delay: 0.7s; }
 
 
-.skill-card img {
-  width: 70px;
-  margin-bottom: 15px;
-  transition: transform 0.5s ease;
+/* ============================= */
+/* 2. NON-TECH SKILLS (BUBBLE ANIMATION) */
+/* ============================= */
+
+/* Keyframe: Pop-in effect */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(10px); /* small + down */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* normal */
+  }
 }
 
-.skill-card h3 {
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+/* Apply animation to bubbles */
+.bubble {
+  animation: popIn 0.5s ease forwards;
+  opacity: 0;
 }
+
+/* Stagger bubbles (one by one appearance) */
+.flow-item:nth-child(1) .bubble { animation-delay: 0.1s; }
+.flow-item:nth-child(2) .bubble { animation-delay: 0.2s; }
+.flow-item:nth-child(3) .bubble { animation-delay: 0.3s; }
+.flow-item:nth-child(4) .bubble { animation-delay: 0.4s; }
+.flow-item:nth-child(5) .bubble { animation-delay: 0.5s; }
+.flow-item:nth-child(6) .bubble { animation-delay: 0.6s; }
+
 
 /* ============================= */
-/* HOVER EFFECT */
+/* 3. HOVER EFFECT (BUBBLES) */
+/* ============================= */
+
+.bubble:hover {
+  transform: translateY(-6px) scale(1.08); /* lift + zoom */
+  color: #00ffdd;
+  background: rgba(0, 255, 221, 0.12);
+
+  /* glow effect */
+  box-shadow: 0 10px 25px rgba(0, 255, 221, 0.4);
+}
+
+
+/* ============================= */
+/* 4. ICON HOVER ANIMATION */
+/* ============================= */
+
+.skill-card img {
+  transition: transform 0.4s ease;
+}
+
+/* Icon moves slightly on hover */
+.skill-card:hover img {
+  transform: translateY(-5px) scale(1.1) rotate(5deg);
+}
+
+
+/* ============================= */
+/* 5. CARD HOVER EFFECT */
 /* ============================= */
 
 .skill-card:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 255, 221, 0.4);
-}
+  transform: translateY(-10px) scale(1.05);
 
-.skill-card:hover img {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.skill-card:hover h3 {
-  color: #00ffdd;
-}
-/* ============================= */
-/* ADDITIONAL SKILLS - CONNECTED FLOW */
-/* ============================= */
-
-.additional-section {
-  margin-top: 120px;
-  text-align: center;
-}
-
-.additional-title {
-  font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: 2.5rem;
-  color: #00ffdd;
-  margin-bottom: 8px;
-}
-
-.title-connector {
-  width: 4px;
-  height: 70px;
-  background: #00c8ff;
-  margin: 0 auto;
-}
-
-/* Wrapper */
-.flow-wrapper {
-  position: relative;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* Horizontal main line */
-.main-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(to right, #00ffdd, #00c8ff);
-}
-
-/* Items container */
-.flow-items {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 0;
-  position: relative;
-  font-family: 'Vend Sans', sans-serif;
-}
-
-/* Each node */
-.flow-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-/* Connector line (perfectly attached) */
-.connector {
-  width: 3px;
-  height: 50px;
-  background:  #00c8ff;
-}
-
-/* Bubble */
-.bubble {
-  margin-top: 8px;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 14px 24px;
-  border-radius: 30px;
-  color: white;
-  font-weight: 500;
-  transition: 0.4s ease;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 5px 20px rgba(0, 255, 221, 0.2);
-}
-
-/* Hover effect */
-.bubble:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 255, 221, 0.5);
-  background: rgba(0, 255, 221, 0.1);
-}
-
-.flow-items::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 919px;   /* change this value */
-  height: 3px;
-  background: #00c8ff;
+  /* glow shadow */
+  box-shadow: 0 12px 30px rgba(0, 255, 221, 0.3);
 }

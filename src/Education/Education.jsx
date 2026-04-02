@@ -23,30 +23,32 @@ function Education() {
       <h2 className="edu-title">My Education Roadmap</h2>
 
       <div className="timeline">
-  {educationData.map((item) => (
-    <React.Fragment key={item.id}>
+        {educationData.map((item) => (
+          
+          /* 🔥 ROW WRAPPER (IMPORTANT FIX) */
+          <div className="timeline-row" key={item.id}>
 
-      {/* Text Card ALWAYS LEFT */}
-      <div className="timeline-item left">
-        <div className="content">
-          <h2>{item.title}</h2><br />
-          <hr></hr><br />
-          <p>{item.institution}</p>
-          <p>{item.duration}</p>
-          <p>{item.score}</p>
-        </div>
+            {/* LEFT → TEXT */}
+            <div className="timeline-item left">
+              <div className="content">
+                <h2>{item.title}</h2><br />
+                <hr /><br />
+                <p>{item.institution}</p>
+                <p>{item.duration}</p>
+                <p>{item.score}</p>
+              </div>
+            </div>
+
+            {/* RIGHT → IMAGE */}
+            <div className="timeline-item right">
+              <div className="content image-box">
+                <img src={item.image} alt={item.title} />
+              </div>
+            </div>
+
+          </div>
+        ))}
       </div>
-
-      {/* Image Card ALWAYS RIGHT */}
-      <div className="timeline-item right">
-        <div className="content image-box">
-          <img src={item.image} alt={item.title} />
-        </div>
-      </div>
-
-    </React.Fragment>
-  ))}
-</div>
     </div>
   );
 }
