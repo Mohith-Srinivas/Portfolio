@@ -1,0 +1,53 @@
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* APP WRAPPER */
+/* ============================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================= */
+/* PAGE CONTENT */
+/* ============================= */
+
+.page-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================= */
+/* SECTION FIX (IMPORTANT) */
+/* ============================= */
+
+/* 🔥 subtract navbar height */
+.home,
+.skills-section,
+.projects,
+.education-section,
+.contact-section {
+  min-height: calc(100vh - 70px);  /* adjust if navbar height differs */
+  width: 100%;
+}
+
+/* ============================= */
+/* REMOVE DEFAULT GAPS */
+/* ============================= */
+
+section {
+  margin: 0;
+  padding: 0;
+}

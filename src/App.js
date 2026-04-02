@@ -10,14 +10,21 @@ import Contact from "./Contact/Contact";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/education" element={<Education />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div className="app"> {/* 🔥 wrapper */}
+
+        <Navbar />
+
+        <div className="page-content"> {/* 🔥 controls height */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+
+      </div>
     </BrowserRouter>
   );
 }
