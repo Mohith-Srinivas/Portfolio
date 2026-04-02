@@ -8,7 +8,7 @@
 
   min-height: 100dvh;
   width: 100%;
-
+  justify-content: flex-start;
   padding: 60px 15px 40px;
   color: white;
   text-align: center;
@@ -36,6 +36,7 @@
 .contact-title {
   font-family: 'Ubuntu Condensed', sans-serif;
   font-size: 1.8rem;
+  margin-top: 20px;
   margin-bottom: 20px;
   color: #00ffd9;
 }
@@ -43,7 +44,7 @@
 .contact-description {
   font-family: 'Vend Sans', sans-serif;
   max-width: 90%;
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: 40px;
   font-size: 0.9rem;
   color: #d6f7ff;
