@@ -6,7 +6,7 @@
 .contact-section {
   background: linear-gradient(145deg, #172739, #114c76, #00c8ff);
 
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
 
   padding: 60px 15px 40px;

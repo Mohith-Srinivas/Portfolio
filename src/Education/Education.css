@@ -6,7 +6,7 @@
   background: linear-gradient(145deg, #172939, #114a76, #00c8ff);
   padding: 100px 0;
   color: white;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .edu-title {

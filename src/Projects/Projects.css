@@ -3,7 +3,7 @@
 /* ============================= */
 
 .projects {
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: 120px 12%;
   position: relative;
   overflow: hidden;
